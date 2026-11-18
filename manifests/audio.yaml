@@ -1,0 +1,255 @@
+# Audio generation manifest for tools/gen-audio.ts.
+# Schema: see manifests/README.md.
+#
+# All music shares D minor and a 90 BPM grid (Riot at double time) so station
+# loops stay blendable; 85 s is 32 bars at 90 BPM, the shared loop length.
+# Prompts embed the station style guide from docs/PRD.md.
+#
+# Voices are designed from text descriptions (no cloned voices). Fill in the
+# provider voice ids after creating them; --dry-run does not need them.
+
+version: 1
+
+voices:
+  nightjar: ""       # warm, funny, a little evasive late-night DJ
+  newsreader: ""     # calm weather/news bulletin reader
+  velvet-ident: ""   # smoky jazz-radio ident voice
+  riot-ident: ""     # shouty punk ident voice
+  caller-01: ""      # lost-tape caller, decades-old recording feel
+
+entries:
+  # ---- Station music loops (music_v1 for drafts; bump model for finals) ----
+  - id: music/velvet-loop
+    kind: music
+    model: music_v1
+    out: assets-raw/audio/music/velvet-loop.mp3
+    prompt: "Seamless instrumental loop, 90 BPM, D minor. Late-night jazz radio: brushed drums, upright bass, muted trumpet, warm amber noir mood, hazy and intimate, rain on a window."
+    seconds: 85
+    variants: 2
+    seed: 883
+    estCostUsd: 0.3
+  - id: music/riot-loop
+    kind: music
+    model: music_v1
+    out: assets-raw/audio/music/riot-loop.mp3
+    prompt: "Seamless instrumental loop, 180 BPM double-time on a 90 BPM grid, D minor. Raw punk band: distorted guitars, pounding drums, shouted energy with no vocals, photocopy-grain aggression, short and sharp."
+    seconds: 85
+    variants: 2
+    seed: 937
+    estCostUsd: 0.3
+  - id: music/forecast-loop
+    kind: music
+    model: music_v1
+    out: assets-raw/audio/music/forecast-loop.mp3
+    prompt: "Seamless instrumental loop, 90 BPM, D minor. Calm synth pad under a news-broadcast mood: soft pulses, gentle weather-map arpeggios, overcast blue-gray atmosphere, steady and reassuring."
+    seconds: 85
+    variants: 2
+    seed: 991
+    estCostUsd: 0.3
+  - id: music/rewind-loop
+    kind: music
+    model: music_v1
+    out: assets-raw/audio/music/rewind-loop.mp3
+    prompt: "Seamless instrumental loop, 90 BPM, D minor. Dreamlike tape-reversed textures: backwards swells, warped piano, VHS wobble, melancholy and uncanny, as if a jazz record is playing in reverse."
+    seconds: 85
+    variants: 2
+    seed: 1045
+    estCostUsd: 0.3
+  - id: music/title
+    kind: music
+    model: music_v1
+    out: assets-raw/audio/music/title.mp3
+    prompt: "Instrumental title theme, 90 BPM, D minor. A lone radio tower at 3 am: sparse piano over soft static swells, brushed drums entering halfway, hopeful and nocturnal."
+    seconds: 45
+    variants: 2
+    seed: 7001
+    estCostUsd: 0.3
+  - id: music/finale
+    kind: music
+    model: music_v1
+    out: assets-raw/audio/music/finale.mp3
+    prompt: "Instrumental broadcast sign-off, 90 BPM, D minor. All stations at once resolving into one warm broadcast: strings, brushed drums, a rising final transmission that ends on open static."
+    seconds: 60
+    variants: 2
+    seed: 7002
+    estCostUsd: 0.3
+  - id: music/credits
+    kind: music
+    model: music_v1
+    out: assets-raw/audio/music/credits.mp3
+    prompt: "Gentle instrumental credits piece, 90 BPM, D minor. Music-box piano over tape hiss, late-night and grateful, fades like a radio being switched off."
+    seconds: 60
+    variants: 2
+    seed: 7003
+    estCostUsd: 0.3
+
+  # ---- SFX ----
+  - id: sfx/footstep-concrete
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/footstep-concrete.mp3
+    prompt: "Single soft sneaker footstep on bare concrete, short attack, small room tail, close mic, no other sounds."
+    seconds: 0.5
+    variants: 4
+    seed: 100
+    estCostUsd: 0.02
+  - id: sfx/footstep-metal
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/footstep-metal.mp3
+    prompt: "Single sneaker footstep on hollow metal grating, short attack, faint metallic ring, close mic, no other sounds."
+    seconds: 0.5
+    variants: 4
+    seed: 101
+    estCostUsd: 0.02
+  - id: sfx/jump
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/jump.mp3
+    prompt: "Light cloth-and-sneaker jump effort, fabric swish with a soft push off, very short, no voice."
+    seconds: 0.5
+    variants: 3
+    seed: 102
+    estCostUsd: 0.02
+  - id: sfx/land
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/land.mp3
+    prompt: "Soft two-foot landing on concrete, low thud, short decay, no voice, no reverb tail."
+    seconds: 0.5
+    variants: 3
+    seed: 103
+    estCostUsd: 0.02
+  - id: sfx/crumble
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/crumble.mp3
+    prompt: "A concrete block crumbling apart under impact, cracking then breaking into rubble, medium tail."
+    seconds: 1.2
+    variants: 3
+    seed: 104
+    estCostUsd: 0.02
+  - id: sfx/dial-click
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/dial-click.mp3
+    prompt: "Single mechanical click of an analog radio tuning dial, small plastic detent, dry and close, 100 milliseconds."
+    seconds: 0.5
+    variants: 3
+    seed: 105
+    estCostUsd: 0.02
+  - id: sfx/dial-detent
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/dial-detent.mp3
+    prompt: "Heavier mechanical detent thunk of an analog radio dial snapping onto a station, satisfying clunk, dry and close."
+    seconds: 0.5
+    variants: 2
+    seed: 106
+    estCostUsd: 0.02
+  - id: sfx/station-lockon
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/station-lockon.mp3
+    prompt: "Short two-note radio lock-on sting, warm sine pulse with a soft chime, static resolving into a clean tone, under a second."
+    seconds: 0.9
+    variants: 4
+    seed: 107
+    estCostUsd: 0.02
+  - id: sfx/wind-gust
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/wind-gust.mp3
+    prompt: "Single gust of wind rushing past a high metal structure, whistling then fading, open-air outdoor feel."
+    seconds: 2.5
+    variants: 3
+    seed: 108
+    estCostUsd: 0.02
+  - id: sfx/transmitter-hum
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/transmitter-hum.mp3
+    prompt: "Steady electrical hum of a small radio transmitter, soft mains buzz with a faint warm modulation, seamless loop."
+    seconds: 2
+    loop: true
+    variants: 2
+    seed: 109
+    estCostUsd: 0.02
+  - id: sfx/tape-pickup
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/tape-pickup.mp3
+    prompt: "A cassette tape being picked up with a soft plastic click and a tiny magnetic flutter, close and dry."
+    seconds: 0.6
+    variants: 2
+    seed: 110
+    estCostUsd: 0.02
+  - id: sfx/checkpoint
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/checkpoint.mp3
+    prompt: "Gentle positive checkpoint chime on a small radio speaker, warm beep, reassuring, very short."
+    seconds: 0.7
+    variants: 2
+    seed: 111
+    estCostUsd: 0.02
+  - id: sfx/death-thud
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/death-thud.mp3
+    prompt: "Dull heavy thud like a dial refusing to move, soft low impact with a small rattle, no voice."
+    seconds: 0.5
+    variants: 2
+    seed: 112
+    estCostUsd: 0.02
+  - id: sfx/ui-confirm
+    kind: sfx
+    model: eleven_text_to_sound_v2
+    out: assets-raw/audio/sfx/ui-confirm.mp3
+    prompt: "Small warm UI confirmation blip from a portable radio speaker, soft click-beep, under half a second."
+    seconds: 0.5
+    variants: 2
+    seed: 113
+    estCostUsd: 0.02
+
+  # ---- TTS (voice ids to be filled in after voice design) ----
+  - id: tts/nightjar/floor-1-welcome
+    kind: tts
+    model: eleven_multilingual_v2
+    voice: nightjar
+    out: assets-raw/audio/voice/nightjar/floor-1-welcome.mp3
+    text: "Well, look who found the stairs. You're on the air now, climber. Mind the dial — she bites."
+    variants: 3
+    estCostUsd: 0.01
+  - id: tts/newsreader/wind-east
+    kind: tts
+    model: eleven_multilingual_v2
+    voice: newsreader
+    out: assets-raw/audio/voice/newsreader/wind-east.mp3
+    text: "And now the tower weather: winds shifting to the east. Hold on to your hats."
+    variants: 3
+    estCostUsd: 0.01
+  - id: tts/ident/velvet-1
+    kind: tts
+    model: eleven_multilingual_v2
+    voice: velvet-ident
+    out: assets-raw/audio/voice/ident/velvet-1.mp3
+    text: "You're listening to Velvet, eighty-eight point three. Stay a while."
+    variants: 2
+    estCostUsd: 0.01
+  - id: tts/ident/riot-1
+    kind: tts
+    model: eleven_multilingual_v2
+    voice: riot-ident
+    out: assets-raw/audio/voice/ident/riot-1.mp3
+    text: "Riot! Ninety-three point seven! Turn it up!"
+    variants: 2
+    estCostUsd: 0.01
+  - id: tts/caller/tape-01
+    kind: tts
+    model: eleven_multilingual_v2
+    voice: caller-01
+    out: assets-raw/audio/voice/caller/tape-01.mp3
+    text: "Hi Nightjar, long-time listener. My radio still picks you up even though the station closed in '87. How is that possible?"
+    variants: 2
+    estCostUsd: 0.01

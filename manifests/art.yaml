@@ -1,0 +1,186 @@
+# Art generation manifest for tools/gen-art.ts.
+# Schema: see manifests/README.md.
+#
+# Backgrounds are generated ultrawide (3440x1440) so 21:9 screens never
+# stretch. Each prompt embeds the station style guide from docs/PRD.md.
+# Drafts run on flux/schnell; finals can bump to a pro endpoint per entry.
+
+version: 1
+
+entries:
+  # ---- Parallax backgrounds, chapter 1 (far / mid / near per station) ----
+  - id: bg/velvet/ch1-far
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/bg/velvet/ch1-far.png
+    prompt: "Warm amber noir city skyline at night seen from a radio tower, rain on glass, distant lit windows, hazy streetlamps, painted matte background, far parallax layer, no text, no characters."
+    size: 3440x1440
+    variants: 2
+    seed: 8801
+    estCostUsd: 0.02
+  - id: bg/velvet/ch1-mid
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/bg/velvet/ch1-mid.png
+    prompt: "Warm amber noir rooftops and fire escapes at mid distance, rain-slick surfaces reflecting amber light, painted matte background, mid parallax layer, no text, no characters."
+    size: 3440x1440
+    variants: 2
+    seed: 8802
+    estCostUsd: 0.02
+  - id: bg/velvet/ch1-near
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/bg/velvet/ch1-near.png
+    prompt: "Warm amber noir close rooftops, rain droplets catching lamplight, dark riveted tower girders at the frame edges, painted matte background, near parallax layer, no text, no characters."
+    size: 3440x1440
+    variants: 2
+    seed: 8803
+    estCostUsd: 0.02
+  - id: bg/riot/ch1-far
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/bg/riot/ch1-far.png
+    prompt: "Red and black punk city skyline, photocopy grain and torn-poster textures, neon signs unlit, harsh angular silhouettes, xerox zine aesthetic, far parallax layer, no legible text, no characters."
+    size: 3440x1440
+    variants: 2
+    seed: 9301
+    estCostUsd: 0.02
+  - id: bg/riot/ch1-mid
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/bg/riot/ch1-mid.png
+    prompt: "Red and black punk rooftops, torn gig posters, photocopy grain, spray-paint shapes, harsh contrast, xerox zine aesthetic, mid parallax layer, no legible text, no characters."
+    size: 3440x1440
+    variants: 2
+    seed: 9302
+    estCostUsd: 0.02
+  - id: bg/riot/ch1-near
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/bg/riot/ch1-near.png
+    prompt: "Red and black punk close-up tower structure, sticker-bombed girders, torn paper layers, neon edge glow, xerox zine aesthetic, near parallax layer, no legible text, no characters."
+    size: 3440x1440
+    variants: 2
+    seed: 9303
+    estCostUsd: 0.02
+  - id: bg/forecast/ch1-far
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/bg/forecast/ch1-far.png
+    prompt: "Overcast blue-gray city skyline under storm clouds, soft rain veils between buildings, muted broadcast-studio palette, painted matte background, far parallax layer, no text, no characters."
+    size: 3440x1440
+    variants: 2
+    seed: 9901
+    estCostUsd: 0.02
+  - id: bg/forecast/ch1-mid
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/bg/forecast/ch1-mid.png
+    prompt: "Overcast blue-gray rooftops with weather vanes and antennae, layered storm clouds, wet surfaces, painted matte background, mid parallax layer, no text, no characters."
+    size: 3440x1440
+    variants: 2
+    seed: 9902
+    estCostUsd: 0.02
+  - id: bg/forecast/ch1-near
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/bg/forecast/ch1-near.png
+    prompt: "Overcast blue-gray close tower detail, anemometer spinning, wet metal, low drifting cloud passing behind girders, painted matte background, near parallax layer, no text, no characters."
+    size: 3440x1440
+    variants: 2
+    seed: 9903
+    estCostUsd: 0.02
+  - id: bg/rewind/ch1-far
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/bg/rewind/ch1-far.png
+    prompt: "Inverted-palette city skyline like a photographic negative, VHS tracking lines and chromatic ghosting, dark sky with pale buildings, far parallax layer, no text, no characters."
+    size: 3440x1440
+    variants: 2
+    seed: 10401
+    estCostUsd: 0.02
+  - id: bg/rewind/ch1-mid
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/bg/rewind/ch1-mid.png
+    prompt: "Inverted-palette rooftops like a photographic negative, VHS tracking distortion and chromatic ghosting, uncanny stillness, mid parallax layer, no text, no characters."
+    size: 3440x1440
+    variants: 2
+    seed: 10402
+    estCostUsd: 0.02
+  - id: bg/rewind/ch1-near
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/bg/rewind/ch1-near.png
+    prompt: "Inverted-palette close tower girders like a photographic negative, strong VHS tracking lines, scanlines and tape wear, near parallax layer, no text, no characters."
+    size: 3440x1440
+    variants: 2
+    seed: 10403
+    estCostUsd: 0.02
+
+  # ---- Tile textures (seamless, one per station) ----
+  - id: tex/velvet-tile
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/tex/velvet-tile.png
+    prompt: "Seamless tileable texture, warm amber noir brass-and-velvet panel with subtle chevron pattern, soft sheen, flat frontal view, game tile texture, no text."
+    size: 1024x1024
+    variants: 2
+    seed: 8804
+    estCostUsd: 0.01
+  - id: tex/riot-tile
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/tex/riot-tile.png
+    prompt: "Seamless tileable texture, red and black photocopy-grain panel with torn stripes pattern, harsh xerox contrast, flat frontal view, game tile texture, no text."
+    size: 1024x1024
+    variants: 2
+    seed: 9304
+    estCostUsd: 0.01
+  - id: tex/forecast-tile
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/tex/forecast-tile.png
+    prompt: "Seamless tileable texture, overcast blue-gray painted panel with soft wave pattern, matte finish, flat frontal view, game tile texture, no text."
+    size: 1024x1024
+    variants: 2
+    seed: 9904
+    estCostUsd: 0.01
+  - id: tex/rewind-tile
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/tex/rewind-tile.png
+    prompt: "Seamless tileable texture, inverted photographic-negative panel with dotted halftone pattern, VHS grain, flat frontal view, game tile texture, no text."
+    size: 1024x1024
+    variants: 2
+    seed: 10404
+    estCostUsd: 0.01
+
+  # ---- Key art and cards ----
+  - id: art/key-art
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/key-art.png
+    prompt: "Key art: a small courier in a raincoat with a backpack radio climbing a vast radio tower at 3 am, four color worlds bleeding into each other up the tower, amber noir, punk red, storm gray, negative invert, cinematic painted illustration, no text."
+    size: 1920x1080
+    variants: 3
+    seed: 42
+    estCostUsd: 0.02
+  - id: art/title-card
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/title-card.png
+    prompt: "Title card background: a lone radio tower silhouette against a deep night sky, a single warm broadcast window glowing at the top, faint radio dial glow in the foreground, cinematic painted illustration, no text."
+    size: 1920x1080
+    variants: 2
+    seed: 43
+    estCostUsd: 0.02
+  - id: art/tape-label
+    kind: image
+    model: fal-ai/flux/schnell
+    out: assets-raw/art/tape-label.png
+    prompt: "A worn cassette tape label sticker seen straight on, handwritten-marker texture, aged paper fibers, blank writing area in the middle, game pickup art, no legible text."
+    size: 512x512
+    variants: 2
+    seed: 44
+    estCostUsd: 0.01
