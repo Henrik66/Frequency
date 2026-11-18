@@ -1,0 +1,16 @@
+{
+  "$schema": "https://opengame.io/schema/opengame.json",
+  "title": "Frequency",
+  "tagline": "auto",
+  "description": "auto",
+  "genre": "platformer",
+  "kind": "game",
+  "build": {
+    "command": "npm run build",
+    "output": "dist"
+  },
+  "controls": "auto",
+  "players": {
+    "mode": "single"
+  }
+}

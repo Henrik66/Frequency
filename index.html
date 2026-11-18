@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frequency</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0b0f; }
+      #game { position: fixed; inset: 0; display: block; width: 100%; height: 100%; }
+      #boot {
+        position: fixed; inset: 0; display: grid; place-items: center;
+        color: #e8e2d6; font: 600 20px/1.2 system-ui, sans-serif; letter-spacing: 0.2em;
+        transition: opacity 400ms ease;
+      }
+      #boot.hidden { opacity: 0; pointer-events: none; }
+      #hud {
+        position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
+        color: #e8e2d6; font: 500 14px/1.4 ui-monospace, monospace; text-align: center;
+        white-space: pre; pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+    <div id="boot">FREQUENCY</div>
+    <div id="hud"></div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
