@@ -22,6 +22,16 @@ npx opengame check --build   OpenGame's own build check
 
 Node version is in `.nvmrc`. Dependencies are pinned exactly (`.npmrc` has `save-exact`). Add a dependency only when the ticket needs it, and say why in the PR.
 
+## Working copy
+
+Several agents work on this repo at the same time. Never work in a checkout you did not create.
+
+1. Start every ticket in its own worktree from the latest main:
+   `git fetch origin && git worktree add ../Frequency-<ticket-id> -b <branch> origin/main`
+2. Work, commit and push only from that folder. Never switch branches in any other folder.
+3. Commit as you go and push before you finish. Never leave work uncommitted at the end of a session.
+4. Open a PR when done; the human merges.
+
 ## Folder ownership
 
 One ticket touches one folder. Do not edit another owner's folder; open an issue or note it in the PR instead.

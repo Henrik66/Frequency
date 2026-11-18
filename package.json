@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "imports": {
+    "#lib/*": "./tools/lib/*.ts"
+  },
   "engines": {
     "node": ">=24"
   },
@@ -13,6 +16,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
+    "gen-audio": "node tools/gen-audio.ts",
+    "gen-art": "node tools/gen-art.ts",
     "check": "npm run typecheck && npm run test && npm run build"
   },
   "dependencies": {
@@ -20,10 +25,14 @@
     "three": "0.187.0"
   },
   "devDependencies": {
+    "@elevenlabs/elevenlabs-js": "2.79.0",
+    "@fal-ai/client": "1.11.0",
     "@opengamehq/cli": "0.13.2",
+    "@types/node": "26.6.6",
     "@types/three": "0.187.0",
     "typescript": "7.0.2",
     "vite": "8.3.8",
-    "vitest": "5.1.1"
+    "vitest": "5.1.1",
+    "yaml": "2.9.1"
   }
 }
