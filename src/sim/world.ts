@@ -44,7 +44,7 @@ export const TUNING = {
   jumpBuffer: 0.12,
   playerW: 0.6,
   playerH: 0.9,
-  dialMaxSpeed: 4,
+  dialMaxSpeed: 5.5,
   dialFineSpeed: 0.8,
   dialAccel: 40,
   dialStiffness: 12,
